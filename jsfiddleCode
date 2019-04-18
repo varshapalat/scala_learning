@@ -1,0 +1,68 @@
+// Start writing your ScalaFiddle code here
+var x = 3
+println(x)
+ x = 5
+println(x)
+var y :Int = 1+1
+println(y)
+
+println({
+  val x = 1 + 1
+  x + 1
+  () => "BLa"
+}) // 3
+
+(x: Int) => x+1
+val addOne = (x: Int) => x+1
+println(addOne(1))
+
+val addOneAndMultiplyBy4 = (x:Int) => {
+  val y = x+1
+  y*4
+}
+
+println(addOneAndMultiplyBy4(1))
+
+def addOneAndMultiplyBy4Fn (x: Int) :Int = {
+  val y = x+1
+  y*4
+}
+println(addOneAndMultiplyBy4Fn(1))
+
+def name: String = System.getProperty("user.name")
+println("Hello, " + name + "!")
+
+class Greeter(pre: String, suf:String) {
+  def welcome(name: String) :Unit = {
+    println(pre+ name + suf)
+  }
+}
+
+val g = new Greeter("Hello ", " !")
+g.welcome("ME")
+
+case class Point(x: Int, y: Int)
+
+var point = Point(1, 2)
+var anotherPoint = Point(1, 2)
+var yetAnotherPoint = Point(2, 2)
+
+if (point == anotherPoint) {
+  println(point + " and " + anotherPoint + " are the same.")
+} else {
+  println(point + " and " + anotherPoint + " are different.")
+} // Point(1,2) and Point(1,2) are the same.
+
+if (point == yetAnotherPoint) {
+  println(point + " and " + yetAnotherPoint + " are the same.")
+} else {
+  println(point + " and " + yetAnotherPoint + " are different.")
+} // Point(1,2) and Point(2,2) are different.
+
+object Main {
+  def main(args: Array[String]): Unit =
+    println("Hello, Scala developer!")
+}
+val arr:Array[String] = Array("1")
+
+Main.main(arr)
